@@ -403,7 +403,7 @@
             
             try {
                 // Fetch from GitHub: /partners/partners.json
-                const response = await fetch('partners/partners.json');
+                const response = await fetch('partners.json');
                 if(!response.ok) throw new Error('File not found');
                 
                 const data = await response.json();
@@ -519,3 +519,4 @@
     </script>
 </body>
 </html>
+
