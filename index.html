@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Hegemon Booking | Sovereign v9.0</title>
+    <title>World Hegemon Booking | Sovereign v9.1</title>
     
-    <!-- GOOGLE TRANSLATE - ENHANCED -->
+    <!-- GOOGLE TRANSLATE - FIXED & ENHANCED -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -36,20 +36,37 @@
         ::-webkit-scrollbar-track { background: var(--dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
         
-        /* GOOGLE TRANSLATE STYLING */
+        /* === GOOGLE TRANSLATE FIXES === */
         .goog-te-banner-frame { display: none !important; }
-        body { top: 0 !important; }
-        .goog-te-gadget { font-size: 0.85rem !important; }
+        body { top: 0 !important; position: relative !important; }
+        .skiptranslate { display: inline !important; }
+        
+        #google_translate_element {
+            position: relative !important;
+            z-index: 1001 !important;
+            margin-left: auto !important;
+            padding: 5px !important;
+        }
+        
+        .goog-te-gadget { 
+            font-size: 0.85rem !important; 
+            white-space: nowrap !important;
+        }
         .goog-te-gadget-simple { 
             background: var(--dark-gray) !important; 
             border: 1px solid var(--primary) !important; 
-            padding: 4px 8px !important; 
+            padding: 4px 10px !important; 
             border-radius: 4px !important;
             cursor: pointer !important;
+            display: inline-block !important;
+            min-width: 120px !important;
         }
         .goog-te-gadget-simple span { color: var(--light) !important; }
         .goog-te-menu-value span { color: var(--primary) !important; font-weight: bold !important; }
         .goog-te-menu-value:hover { opacity: 0.9; }
+        
+        /* Prevent layout shift from translate bar */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
         
         header { 
             background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); 
@@ -101,7 +118,6 @@
         .form-control { width: 100%; padding: 1rem; background: #0a0a0a; border: 1px solid #333; color: #fff; border-radius: 4px; transition: border 0.3s; }
         .form-control:focus { outline: none; border-color: var(--primary); }
         
-        /* DATE RANGE STYLING */
         .date-range { display: flex; gap: 10px; align-items: center; }
         .date-range .form-group { margin-bottom: 0; flex: 1; }
         .date-range-separator { color: var(--primary); font-weight: bold; }
@@ -159,7 +175,7 @@
     <header>
         <div class="logo">World Hegemon <span>Booking</span></div>
         
-        <!-- GOOGLE TRANSLATE WIDGET - ENHANCED -->
+        <!-- GOOGLE TRANSLATE - FIXED POSITION -->
         <div id="google_translate_element"></div>
         
         <div class="status-badge">
@@ -246,7 +262,7 @@
                     </div>
                 </div>
 
-                <!-- SIMPLIFIED DATE RANGE -->
+                <!-- DATE RANGE -->
                 <div class="form-group full">
                     <label>Датуми на Патување</label>
                     <div class="date-range">
@@ -298,7 +314,7 @@
         </div>
     </section>
 
-    <!-- PARTNERS DIRECTORY - DYNAMIC FROM JSON -->
+    <!-- PARTNERS DIRECTORY -->
     <section class="partners-section">
         <div class="partners-header">
             <h2 style="color:var(--primary); margin-bottom:0.5rem;">МРЕЖА ОД 320 СУВЕРЕНИ ПАРТНЕРИ</h2>
@@ -313,7 +329,7 @@
         <h3 style="color:#fff; margin-bottom:1rem; border-left: 3px solid var(--primary); padding-left: 10px;">ЦЕНТРАЛЕН СИСТЕМСКИ КОНТРОЛЕН ПАНЕЛ</h3>
         <div class="console-window" id="consoleOutput">
             <span class="console-line info">SYSTEM BOOT INITIATED...</span>
-            <span class="console-line info">LOADING HEGEMON CORE v9.0...</span>
+            <span class="console-line info">LOADING HEGEMON CORE v9.1...</span>
             <span class="console-line info">CONNECTING TO 320 SOVEREIGN NODES...</span>
             <span class="console-line">✓ NODE 001: MACEDONIAN_ARTISANS - ONLINE</span>
             <span class="console-line">✓ NODE 002: LUXURY_NETWORK - ONLINE</span>
@@ -361,7 +377,14 @@
     </footer>
 
     <script>
-        // --- 1. LIVE STATS ---
+        // === DATE FORMAT HELPER: ISO → DD/MM/YYYY ===
+        function formatDateMK(isoDate) {
+            if(!isoDate) return '–';
+            const [year, month, day] = isoDate.split('-');
+            return `${day}/${month}/${year}`;
+        }
+
+        // === 1. LIVE STATS ===
         function updateStats() {
             const flowElement = document.getElementById('global-flow');
             const bookingsElement = document.getElementById('active-bookings');
@@ -376,7 +399,7 @@
             }, 5000);
         }
 
-        // --- 2. BUDGET CALCULATOR ---
+        // === 2. BUDGET CALCULATOR ===
         function calculateSplit() {
             const budget = document.getElementById('budgetInput').value;
             const splitDisplay = document.getElementById('budgetSplit');
@@ -389,7 +412,7 @@
             } else { splitDisplay.style.display = 'none'; }
         }
 
-        // --- 3. BOOKING HANDLER ---
+        // === 3. BOOKING HANDLER ===
         function handleBooking(e) {
             const name = e.target.name.value;
             const dest = e.target.destination.value;
@@ -398,7 +421,7 @@
             const travelType = e.target.travel_type.value || 'Неодредено';
             const dateFrom = e.target.date_from.value || '';
             const dateTo = e.target.date_to.value || '';
-            const dateRange = dateFrom && dateTo ? `${dateFrom} до ${dateTo}` : (dateFrom || dateTo || 'Неодредено');
+            const dateRange = dateFrom && dateTo ? `${formatDateMK(dateFrom)} до ${formatDateMK(dateTo)}` : (dateFrom || dateTo ? formatDateMK(dateFrom || dateTo) : 'Неодредено');
             
             const booking = { 
                 date: new Date().toLocaleDateString(), 
@@ -439,7 +462,7 @@
             }, 1500);
         }
 
-        // --- 4. CONSOLE SYSTEM ---
+        // === 4. CONSOLE SYSTEM ===
         function addConsoleLine(text, type = '') {
             const consoleOutput = document.getElementById('consoleOutput');
             const line = document.createElement('span');
@@ -450,26 +473,20 @@
             consoleOutput.scrollTop = consoleOutput.scrollHeight;
         }
 
-        // --- 5. DYNAMIC PARTNERS LOADER ---
+        // === 5. DYNAMIC PARTNERS LOADER ===
         async function loadPartners() {
             const container = document.getElementById('partnersContainer');
             const countElement = document.getElementById('partners-count');
             
             try {
-                // Fetch from root: partners.json (FIXED PATH)
                 const response = await fetch('partners.json');
                 if(!response.ok) throw new Error('File not found');
                 
                 const data = await response.json();
                 const partners = data.partners || [];
-                
-                // Update counter
                 countElement.innerText = partners.length;
-                
-                // Clear loading message
                 container.innerHTML = '';
                 
-                // Display partners (show max 8 for demo)
                 const displayPartners = partners.slice(0, 8);
                 displayPartners.forEach(p => {
                     const card = document.createElement('div');
@@ -483,7 +500,6 @@
                     container.appendChild(card);
                 });
                 
-                // Add "more" indicator if > 8 partners
                 if(partners.length > 8) {
                     const more = document.createElement('div');
                     more.style.gridColumn = '1 / -1';
@@ -508,7 +524,7 @@
             }
         }
 
-        // --- 6. ADMIN PANEL ---
+        // === 6. ADMIN PANEL ===
         function toggleAdmin() {
             const panel = document.getElementById('adminPanel');
             if(panel.style.display === 'block') { panel.style.display = 'none'; } 
@@ -533,7 +549,7 @@
             });
         }
 
-        // --- 7. CSV EXPORT ---
+        // === 7. CSV EXPORT (WITH FORMATTED DATES) ===
         function exportToCSV() {
             const bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
             if(bookings.length === 0) { alert('Нема податоци за експорт!'); return; }
@@ -563,12 +579,12 @@
             }
         }
 
-        // --- INIT ---
+        // === INIT ===
         window.onload = function() { 
             updateStats(); 
             loadPartners();
-            addConsoleLine("SYSTEM READY. SOVEREIGN v9.0 ACTIVE.", "success");
-            addConsoleLine("ENHANCED: Date Range (Од/До) | 40+ Languages | Simplified UI", "info");
+            addConsoleLine("SYSTEM READY. SOVEREIGN v9.1 ACTIVE.", "success");
+            addConsoleLine("ENHANCED: DD/MM/YYYY dates | Static translate icon | Layout fixes", "info");
         };
     </script>
 </body>
