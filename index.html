@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Hegemon Booking | Global Sovereign v8.0</title>
+    <title>World Hegemon Booking | Sovereign v9.0</title>
     
-    <!-- GOOGLE TRANSLATE WIDGET -->
+    <!-- GOOGLE TRANSLATE - ENHANCED -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'mk',
-                includedLanguages: 'mk,en,de,fr,it,es,ru,tr,sq,el',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
+                includedLanguages: 'mk,en,de,fr,it,es,ru,tr,sq,el,sr,hr,bs,bg,ro,hu,pl,cs,sk,sl,ar,zh-CN,ja,ko,pt,nl,sv,no,da,fi,uk,he,hi,th,viet,id,ms',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: true,
+                multilanguagePage: true
             }, 'google_translate_element');
         }
     </script>
@@ -35,17 +36,43 @@
         ::-webkit-scrollbar-track { background: var(--dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
         
-        /* GOOGLE TRANSLATE BAR STYLING */
+        /* GOOGLE TRANSLATE STYLING */
         .goog-te-banner-frame { display: none !important; }
-        .goog-te-gadget { font-size: 0.9rem !important; }
-        .goog-te-gadget-simple { background: var(--dark-gray) !important; border: 1px solid var(--primary) !important; padding: 5px 10px !important; border-radius: 4px !important; }
+        body { top: 0 !important; }
+        .goog-te-gadget { font-size: 0.85rem !important; }
+        .goog-te-gadget-simple { 
+            background: var(--dark-gray) !important; 
+            border: 1px solid var(--primary) !important; 
+            padding: 4px 8px !important; 
+            border-radius: 4px !important;
+            cursor: pointer !important;
+        }
         .goog-te-gadget-simple span { color: var(--light) !important; }
         .goog-te-menu-value span { color: var(--primary) !important; font-weight: bold !important; }
+        .goog-te-menu-value:hover { opacity: 0.9; }
         
-        header { background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); border-bottom: 2px solid var(--primary); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); flex-wrap: wrap; gap: 10px; }
+        header { 
+            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); 
+            border-bottom: 2px solid var(--primary); 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; top: 0; z-index: 1000; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+            flex-wrap: wrap; gap: 10px; 
+        }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
         .logo span { color: #fff; }
-        .status-badge { background: rgba(0, 255, 136, 0.1); color: var(--success); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--success); font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .status-badge { 
+            background: rgba(0, 255, 136, 0.1); 
+            color: var(--success); 
+            padding: 0.5rem 1rem; 
+            border-radius: 4px; 
+            border: 1px solid var(--success); 
+            font-size: 0.8rem; font-weight: bold; 
+            display: flex; align-items: center; gap: 10px; 
+        }
         .status-dot { height: 10px; width: 10px; background-color: var(--success); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); } }
         
@@ -66,12 +93,19 @@
         .booking-section { background: #111; padding: 4rem 2rem; border-top: 1px solid #333; border-bottom: 1px solid #333; }
         .booking-container { max-width: 900px; margin: 0 auto; background: var(--dark-gray); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
         .booking-header { text-align: center; margin-bottom: 2rem; color: var(--primary); }
+        
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         .form-group { margin-bottom: 1.5rem; }
         .form-group.full { grid-column: 1 / -1; }
         .form-group label { display: block; margin-bottom: 0.5rem; color: var(--primary); font-size: 0.9rem; font-weight: 600; }
         .form-control { width: 100%; padding: 1rem; background: #0a0a0a; border: 1px solid #333; color: #fff; border-radius: 4px; transition: border 0.3s; }
         .form-control:focus { outline: none; border-color: var(--primary); }
+        
+        /* DATE RANGE STYLING */
+        .date-range { display: flex; gap: 10px; align-items: center; }
+        .date-range .form-group { margin-bottom: 0; flex: 1; }
+        .date-range-separator { color: var(--primary); font-weight: bold; }
+        
         .budget-display { background: #000; padding: 1rem; border-radius: 4px; margin-top: 1rem; border: 1px solid #333; }
         .budget-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
         .budget-row.total { border-top: 1px solid #333; padding-top: 0.5rem; margin-top: 0.5rem; color: var(--primary); font-weight: bold; }
@@ -114,7 +148,9 @@
             .form-grid { grid-template-columns: 1fr; } 
             .hero h1 { font-size: 2rem; } 
             header { flex-direction: column; gap: 1rem; } 
-            .admin-header { flex-direction: column; gap: 1rem; align-items: flex-start; } 
+            .admin-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .date-range { flex-direction: column; gap: 5px; }
+            .date-range-separator { display: none; }
         }
     </style>
 </head>
@@ -123,8 +159,8 @@
     <header>
         <div class="logo">World Hegemon <span>Booking</span></div>
         
-        <!-- GOOGLE TRANSLATE WIDGET -->
-        <div id="google_translate_element" style="margin-left: auto;"></div>
+        <!-- GOOGLE TRANSLATE WIDGET - ENHANCED -->
+        <div id="google_translate_element"></div>
         
         <div class="status-badge">
             <span class="status-dot"></span>
@@ -181,8 +217,8 @@
                         <input type="tel" name="phone" class="form-control" placeholder="+389 70 123 456">
                     </div>
                     <div class="form-group">
-                        <label>Датум на Патување</label>
-                        <input type="date" name="travel_date" class="form-control">
+                        <label>Број на Патници</label>
+                        <input type="number" name="travelers" class="form-control" min="1" max="20" value="1">
                     </div>
                 </div>
                 
@@ -192,28 +228,41 @@
                         <input type="text" name="destination" class="form-control" required placeholder="На пр. Париз, Дубаи, Охрид">
                     </div>
                     <div class="form-group">
-                        <label>Број на Патници</label>
-                        <input type="number" name="travelers" class="form-control" min="1" max="20" value="1">
+                        <label>Тип на Патување</label>
+                        <select name="travel_type" class="form-control">
+                            <option value="">-- Избери тип --</option>
+                            <option value="tourist">🧳 Туристичко Патување</option>
+                            <option value="summer">☀️ Летување</option>
+                            <option value="winter">⛷️ Зимување / Скијање</option>
+                            <option value="cruise">🚢 Крстарење</option>
+                            <option value="city">🏙️ Градски Одмор</option>
+                            <option value="family">👨‍👩‍👧‍👦 Семејно Патување</option>
+                            <option value="romantic">💕 Романтично Патување</option>
+                            <option value="adventure">🏔️ Авантура и Природа</option>
+                            <option value="cultural">🏛️ Културно / Верско Патување</option>
+                            <option value="business">💼 Бизнес Патување</option>
+                            <option value="vip">👑 VIP / Луксузно</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- SIMPLIFIED TRAVEL TYPES -->
-                <div class="form-group">
-                    <label>Тип на Патување</label>
-                    <select name="travel_type" class="form-control">
-                        <option value="">-- Избери тип --</option>
-                        <option value="tourist">🧳 Туристичко Патување</option>
-                        <option value="summer">☀️ Летување</option>
-                        <option value="winter">⛷️ Зимување / Скијање</option>
-                        <option value="cruise">🚢 Крстарење</option>
-                        <option value="city">🏙️ Градски Одмор</option>
-                        <option value="family">👨‍👩‍👧‍👦 Семејно Патување</option>
-                        <option value="romantic">💕 Романтично Патување</option>
-                        <option value="adventure">🏔️ Авантура и Природа</option>
-                        <option value="cultural">🏛️ Културно / Верско Патување</option>
-                        <option value="business">💼 Бизнес Патување</option>
-                        <option value="vip">👑 VIP / Луксузно</option>
-                    </select>
+                <!-- SIMPLIFIED DATE RANGE -->
+                <div class="form-group full">
+                    <label>Датуми на Патување</label>
+                    <div class="date-range">
+                        <div class="form-group">
+                            <label style="font-size:0.8rem; color:var(--text-gray)">Од (ДД/ММ/ГГГГ)</label>
+                            <input type="date" name="date_from" class="form-control">
+                        </div>
+                        <span class="date-range-separator">➝</span>
+                        <div class="form-group">
+                            <label style="font-size:0.8rem; color:var(--text-gray)">До (ДД/ММ/ГГГГ)</label>
+                            <input type="date" name="date_to" class="form-control">
+                        </div>
+                    </div>
+                    <p style="font-size:0.75rem; color:var(--text-gray); margin-top:0.3rem;">
+                        * Избери го првиот и последниот ден од твоето патување
+                    </p>
                 </div>
 
                 <div class="form-group full">
@@ -253,7 +302,7 @@
     <section class="partners-section">
         <div class="partners-header">
             <h2 style="color:var(--primary); margin-bottom:0.5rem;">МРЕЖА ОД 320 СУВЕРЕНИ ПАРТНЕРИ</h2>
-            <p style="color:var(--text-gray);">Податоците се влечат динамички од <code>partners/partners.json</code></p>
+            <p style="color:var(--text-gray);">Податоците се влечат динамички од <code>partners.json</code></p>
         </div>
         <div id="partnersContainer" class="partners-grid">
             <div class="partners-loading">🔄 Вчитување на партнери...</div>
@@ -264,7 +313,7 @@
         <h3 style="color:#fff; margin-bottom:1rem; border-left: 3px solid var(--primary); padding-left: 10px;">ЦЕНТРАЛЕН СИСТЕМСКИ КОНТРОЛЕН ПАНЕЛ</h3>
         <div class="console-window" id="consoleOutput">
             <span class="console-line info">SYSTEM BOOT INITIATED...</span>
-            <span class="console-line info">LOADING HEGEMON CORE v8.0...</span>
+            <span class="console-line info">LOADING HEGEMON CORE v9.0...</span>
             <span class="console-line info">CONNECTING TO 320 SOVEREIGN NODES...</span>
             <span class="console-line">✓ NODE 001: MACEDONIAN_ARTISANS - ONLINE</span>
             <span class="console-line">✓ NODE 002: LUXURY_NETWORK - ONLINE</span>
@@ -347,6 +396,10 @@
             const budget = e.target.budget.value;
             const travelers = e.target.travelers.value || 1;
             const travelType = e.target.travel_type.value || 'Неодредено';
+            const dateFrom = e.target.date_from.value || '';
+            const dateTo = e.target.date_to.value || '';
+            const dateRange = dateFrom && dateTo ? `${dateFrom} до ${dateTo}` : (dateFrom || dateTo || 'Неодредено');
+            
             const booking = { 
                 date: new Date().toLocaleDateString(), 
                 name: name, 
@@ -354,6 +407,7 @@
                 budget: budget,
                 travelers: travelers,
                 travelType: travelType,
+                dateRange: dateRange,
                 status: 'Pending' 
             };
             let bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
@@ -363,7 +417,7 @@
             count++;
             localStorage.setItem('hegemon_bookings_count', count);
             document.getElementById('active-bookings').innerText = count.toLocaleString();
-            addConsoleLine(`NEW BOOKING: ${name} → ${dest} | €${budget} | ${travelType}`, 'success');
+            addConsoleLine(`NEW BOOKING: ${name} → ${dest} | €${budget} | ${dateRange}`, 'success');
             addConsoleLine(`DISTRIBUTING TO 320 NODES...`, 'info');
             const btn = e.target.querySelector('button');
             const originalText = btn.innerText;
@@ -402,8 +456,8 @@
             const countElement = document.getElementById('partners-count');
             
             try {
-                // Fetch from GitHub: /partners/partners.json
-                fetch('partners.json')
+                // Fetch from root: partners.json (FIXED PATH)
+                const response = await fetch('partners.json');
                 if(!response.ok) throw new Error('File not found');
                 
                 const data = await response.json();
@@ -447,7 +501,7 @@
                 container.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; color: var(--danger);">
                         ⚠️ Не може да се вчитаат партнерите.<br>
-                        Провери дали <code>partners/partners.json</code> постои во репозиториумот.
+                        Провери дали <code>partners.json</code> постои во репозиториумот.
                     </div>
                 `;
                 addConsoleLine(`PARTNERS LOAD ERROR: ${error.message}`, 'error');
@@ -483,9 +537,9 @@
         function exportToCSV() {
             const bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
             if(bookings.length === 0) { alert('Нема податоци за експорт!'); return; }
-            let csv = 'Дата,Име,Дестинација,Буџет,Патници,Тип,Статус\n';
+            let csv = 'Дата,Име,Дестинација,Буџет,Патници,Тип,Датуми,Статус\n';
             bookings.forEach(b => {
-                csv += `${b.date},${b.name},${b.destination},${b.budget},${b.travelers || 1},${b.travelType || ''},${b.status}\n`;
+                csv += `${b.date},${b.name},${b.destination},${b.budget},${b.travelers || 1},${b.travelType || ''},${b.dateRange || ''},${b.status}\n`;
             });
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
@@ -512,12 +566,10 @@
         // --- INIT ---
         window.onload = function() { 
             updateStats(); 
-            loadPartners(); // Load partners from JSON
-            addConsoleLine("SYSTEM READY. GLOBAL SOVEREIGN v8.0 ACTIVE.", "success");
-            addConsoleLine("GOOGLE TRANSLATE: Macedonian default | Simplified travel types | Dynamic partners loader", "info");
+            loadPartners();
+            addConsoleLine("SYSTEM READY. SOVEREIGN v9.0 ACTIVE.", "success");
+            addConsoleLine("ENHANCED: Date Range (Од/До) | 40+ Languages | Simplified UI", "info");
         };
     </script>
 </body>
 </html>
-
-
