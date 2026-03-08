@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Hegemon Booking | Sovereign Core v6.0</title>
+    <title>World Hegemon Booking | Global Sovereign v8.0</title>
+    
+    <!-- GOOGLE TRANSLATE WIDGET -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'mk',
+                includedLanguages: 'mk,en,de,fr,it,es,ru,tr,sq,el',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <style>
         :root {
             --primary: #d4af37;
@@ -20,17 +34,27 @@
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
-        header { background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); border-bottom: 2px solid var(--primary); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        
+        /* GOOGLE TRANSLATE BAR STYLING */
+        .goog-te-banner-frame { display: none !important; }
+        .goog-te-gadget { font-size: 0.9rem !important; }
+        .goog-te-gadget-simple { background: var(--dark-gray) !important; border: 1px solid var(--primary) !important; padding: 5px 10px !important; border-radius: 4px !important; }
+        .goog-te-gadget-simple span { color: var(--light) !important; }
+        .goog-te-menu-value span { color: var(--primary) !important; font-weight: bold !important; }
+        
+        header { background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); border-bottom: 2px solid var(--primary); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); flex-wrap: wrap; gap: 10px; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
         .logo span { color: #fff; }
         .status-badge { background: rgba(0, 255, 136, 0.1); color: var(--success); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--success); font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; gap: 10px; }
         .status-dot { height: 10px; width: 10px; background-color: var(--success); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); } }
+        
         .hero { text-align: center; padding: 5rem 2rem; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); border-bottom: 1px solid #333; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; background: -webkit-linear-gradient(var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.2rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 2rem auto; }
         .btn-main { background: var(--primary); color: var(--dark); padding: 1rem 2.5rem; border: none; font-weight: bold; font-size: 1rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
         .btn-main:hover { transform: scale(1.05); background: #fff; box-shadow: 0 0 20px var(--primary); }
+        
         .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 3rem 2rem; max-width: 1400px; margin: 0 auto; }
         .card { background: var(--dark-gray); padding: 2rem; border-radius: 8px; border: 1px solid #333; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
@@ -38,8 +62,9 @@
         .card .value { font-size: 2.5rem; font-weight: bold; color: var(--light); }
         .card .sub { color: var(--success); font-size: 0.9rem; margin-top: 0.5rem; display: block; }
         .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--primary); }
+        
         .booking-section { background: #111; padding: 4rem 2rem; border-top: 1px solid #333; border-bottom: 1px solid #333; }
-        .booking-container { max-width: 800px; margin: 0 auto; background: var(--dark-gray); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
+        .booking-container { max-width: 900px; margin: 0 auto; background: var(--dark-gray); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--primary); box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
         .booking-header { text-align: center; margin-bottom: 2rem; color: var(--primary); }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         .form-group { margin-bottom: 1.5rem; }
@@ -50,6 +75,7 @@
         .budget-display { background: #000; padding: 1rem; border-radius: 4px; margin-top: 1rem; border: 1px solid #333; }
         .budget-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
         .budget-row.total { border-top: 1px solid #333; padding-top: 0.5rem; margin-top: 0.5rem; color: var(--primary); font-weight: bold; }
+        
         .console-section { padding: 2rem; max-width: 1400px; margin: 0 auto; }
         .console-window { background: #000; border: 1px solid #333; border-radius: 4px; padding: 1rem; font-family: 'Courier New', Courier, monospace; height: 250px; overflow-y: auto; color: #0f0; font-size: 0.85rem; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); }
         .console-line { margin-bottom: 5px; display: block; }
@@ -57,23 +83,49 @@
         .console-line.warn { color: #ffbb33; }
         .console-line.info { color: #00ccff; }
         .console-line.success { color: var(--success); }
+        
+        .partners-section { padding: 4rem 2rem; background: #0f0f0f; border-top: 1px solid #333; }
+        .partners-header { text-align: center; margin-bottom: 2rem; }
+        .partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .partner-card { background: var(--dark-gray); padding: 1.5rem; border-radius: 8px; border: 1px solid #333; text-align: center; transition: all 0.3s; }
+        .partner-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .partner-card .name { color: var(--primary); font-weight: bold; margin-bottom: 0.5rem; }
+        .partner-card .category { color: var(--text-gray); font-size: 0.85rem; }
+        .partner-card .status { color: var(--success); font-size: 0.8rem; margin-top: 0.5rem; }
+        .partner-card .country { color: var(--text-gray); font-size: 0.8rem; }
+        .partners-loading { text-align: center; color: var(--text-gray); padding: 2rem; }
+        
         .admin-panel { display: none; background: #1a1a1a; padding: 2rem; margin: 2rem auto; max-width: 1000px; border: 1px solid var(--danger); }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 10px; }
         .admin-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         .admin-table th, .admin-table td { text-align: left; padding: 1rem; border-bottom: 1px solid #333; }
         .admin-table th { color: var(--primary); }
         .btn-danger { background: var(--danger); color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; }
+        .btn-export { background: var(--success); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-export:hover { background: #00cc66; }
+        
         footer { background: #050505; padding: 3rem 2rem; text-align: center; border-top: 2px solid var(--primary); margin-top: 2rem; }
         .footer-info { color: #666; font-size: 0.9rem; margin-top: 1rem; }
         .contact-link { color: var(--primary); text-decoration: none; font-weight: bold; }
         .admin-toggle { margin-top: 2rem; opacity: 0.3; cursor: pointer; font-size: 0.8rem; }
         .admin-toggle:hover { opacity: 1; }
-        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } header { flex-direction: column; gap: 1rem; } }
+        
+        @media (max-width: 768px) { 
+            .form-grid { grid-template-columns: 1fr; } 
+            .hero h1 { font-size: 2rem; } 
+            header { flex-direction: column; gap: 1rem; } 
+            .admin-header { flex-direction: column; gap: 1rem; align-items: flex-start; } 
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">World Hegemon <span>Booking</span></div>
+        
+        <!-- GOOGLE TRANSLATE WIDGET -->
+        <div id="google_translate_element" style="margin-left: auto;"></div>
+        
         <div class="status-badge">
             <span class="status-dot"></span>
             СИСТЕМОТ Е АКТИВЕН
@@ -94,7 +146,7 @@
         </div>
         <div class="card">
             <h3>Суверени Партнери</h3>
-            <div class="value">320</div>
+            <div class="value" id="partners-count">320</div>
             <span class="sub">ЦЕЛОСНО ИНТЕГРИРАНИ</span>
         </div>
         <div class="card">
@@ -113,37 +165,59 @@
         <div class="booking-container">
             <h2 class="booking-header">АКТИВИРАЈ СУВЕРЕНО БУКИРАЊЕ</h2>
             
-            <!-- FORMSPREE INTEGRATED - YOUR KEY: xwvrpdqy -->
+            <!-- FORMSPREE INTEGRATED - KEY: xwvrpdqy -->
             <form id="bookingForm" action="https://formspree.io/f/xwvrpdqy" method="POST" onsubmit="handleBooking(event)">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Име и Презиме</label>
+                        <label>Име и Презиме *</label>
                         <input type="text" name="name" class="form-control" required placeholder="Внеси име">
                     </div>
                     <div class="form-group">
-                        <label>Е-пошта</label>
+                        <label>Е-пошта *</label>
                         <input type="email" name="email" class="form-control" required placeholder="email@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="+389 70 123 456">
+                    </div>
+                    <div class="form-group">
+                        <label>Датум на Патување</label>
+                        <input type="date" name="travel_date" class="form-control">
                     </div>
                 </div>
                 
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Дестинација</label>
-                        <input type="text" name="destination" class="form-control" required placeholder="На пр. Париз, Дубаи">
+                        <label>Дестинација *</label>
+                        <input type="text" name="destination" class="form-control" required placeholder="На пр. Париз, Дубаи, Охрид">
                     </div>
                     <div class="form-group">
-                        <label>Тип на Искуство</label>
-                        <select name="experience" class="form-control">
-                            <option>Луксозно Откривање</option>
-                            <option>Бизнис Хегемонија</option>
-                            <option>Културна Доминација</option>
-                            <option>Авантуристичка Експанзија</option>
-                        </select>
+                        <label>Број на Патници</label>
+                        <input type="number" name="travelers" class="form-control" min="1" max="20" value="1">
                     </div>
                 </div>
 
+                <!-- SIMPLIFIED TRAVEL TYPES -->
+                <div class="form-group">
+                    <label>Тип на Патување</label>
+                    <select name="travel_type" class="form-control">
+                        <option value="">-- Избери тип --</option>
+                        <option value="tourist">🧳 Туристичко Патување</option>
+                        <option value="summer">☀️ Летување</option>
+                        <option value="winter">⛷️ Зимување / Скијање</option>
+                        <option value="cruise">🚢 Крстарење</option>
+                        <option value="city">🏙️ Градски Одмор</option>
+                        <option value="family">👨‍👩‍👧‍👦 Семејно Патување</option>
+                        <option value="romantic">💕 Романтично Патување</option>
+                        <option value="adventure">🏔️ Авантура и Природа</option>
+                        <option value="cultural">🏛️ Културно / Верско Патување</option>
+                        <option value="business">💼 Бизнес Патување</option>
+                        <option value="vip">👑 VIP / Луксузно</option>
+                    </select>
+                </div>
+
                 <div class="form-group full">
-                    <label>Буџет (€)</label>
+                    <label>Буџет (€) *</label>
                     <input type="number" id="budgetInput" name="budget" class="form-control" required placeholder="Внеси износ" oninput="calculateSplit()">
                     
                     <div class="budget-display" id="budgetSplit" style="display:none;">
@@ -162,6 +236,11 @@
                     </div>
                 </div>
 
+                <div class="form-group full">
+                    <label>Специјални Барања</label>
+                    <textarea name="special_requests" class="form-control" rows="3" placeholder="На пр. вегетаријанска храна, пристап за инвалиди, приватен водич..."></textarea>
+                </div>
+
                 <button type="submit" class="btn-main" style="width:100%">ИСПРАТИ БАРАЊЕ ДО 320 ПАРТНЕРИ</button>
                 <p style="text-align:center; margin-top:1rem; font-size:0.8rem; color:#666;">
                     Ќе добиете понуди од сите соодветни партнери во рок од 24 часа.
@@ -170,11 +249,22 @@
         </div>
     </section>
 
+    <!-- PARTNERS DIRECTORY - DYNAMIC FROM JSON -->
+    <section class="partners-section">
+        <div class="partners-header">
+            <h2 style="color:var(--primary); margin-bottom:0.5rem;">МРЕЖА ОД 320 СУВЕРЕНИ ПАРТНЕРИ</h2>
+            <p style="color:var(--text-gray);">Податоците се влечат динамички од <code>partners/partners.json</code></p>
+        </div>
+        <div id="partnersContainer" class="partners-grid">
+            <div class="partners-loading">🔄 Вчитување на партнери...</div>
+        </div>
+    </section>
+
     <section class="console-section">
         <h3 style="color:#fff; margin-bottom:1rem; border-left: 3px solid var(--primary); padding-left: 10px;">ЦЕНТРАЛЕН СИСТЕМСКИ КОНТРОЛЕН ПАНЕЛ</h3>
         <div class="console-window" id="consoleOutput">
             <span class="console-line info">SYSTEM BOOT INITIATED...</span>
-            <span class="console-line info">LOADING HEGEMON CORE v6.0...</span>
+            <span class="console-line info">LOADING HEGEMON CORE v8.0...</span>
             <span class="console-line info">CONNECTING TO 320 SOVEREIGN NODES...</span>
             <span class="console-line">✓ NODE 001: MACEDONIAN_ARTISANS - ONLINE</span>
             <span class="console-line">✓ NODE 002: LUXURY_NETWORK - ONLINE</span>
@@ -188,8 +278,12 @@
         </div>
     </section>
 
+    <!-- ADMIN PANEL WITH EXPORT -->
     <section id="adminPanel" class="admin-panel">
-        <h3 style="color:var(--danger)">АДМИН ПРИСТАП (ЛОКАЛНО)</h3>
+        <div class="admin-header">
+            <h3 style="color:var(--danger)">АДМИН ПРИСТАП (ЛОКАЛНО)</h3>
+            <button class="btn-export" onclick="exportToCSV()">📥 ЕКСПОРТ ВО CSV</button>
+        </div>
         <p style="color:#aaa; font-size:0.9rem;">Ова ги прикажува букирањата зачувани во овој прелистувач.</p>
         <button class="btn-danger" onclick="clearBookings()" style="margin-top:10px;">ИЗБРИШИ ГИ СИТЕ ПОДАТОЦИ</button>
         <table class="admin-table">
@@ -199,6 +293,7 @@
                     <th>Име</th>
                     <th>Дестинација</th>
                     <th>Буџет</th>
+                    <th>Патници</th>
                     <th>Статус</th>
                 </tr>
             </thead>
@@ -217,6 +312,7 @@
     </footer>
 
     <script>
+        // --- 1. LIVE STATS ---
         function updateStats() {
             const flowElement = document.getElementById('global-flow');
             const bookingsElement = document.getElementById('active-bookings');
@@ -231,6 +327,7 @@
             }, 5000);
         }
 
+        // --- 2. BUDGET CALCULATOR ---
         function calculateSplit() {
             const budget = document.getElementById('budgetInput').value;
             const splitDisplay = document.getElementById('budgetSplit');
@@ -243,11 +340,22 @@
             } else { splitDisplay.style.display = 'none'; }
         }
 
+        // --- 3. BOOKING HANDLER ---
         function handleBooking(e) {
             const name = e.target.name.value;
             const dest = e.target.destination.value;
             const budget = e.target.budget.value;
-            const booking = { date: new Date().toLocaleDateString(), name: name, destination: dest, budget: budget, status: 'Pending' };
+            const travelers = e.target.travelers.value || 1;
+            const travelType = e.target.travel_type.value || 'Неодредено';
+            const booking = { 
+                date: new Date().toLocaleDateString(), 
+                name: name, 
+                destination: dest, 
+                budget: budget,
+                travelers: travelers,
+                travelType: travelType,
+                status: 'Pending' 
+            };
             let bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
             bookings.push(booking);
             localStorage.setItem('hegemon_bookings_list', JSON.stringify(bookings));
@@ -255,14 +363,14 @@
             count++;
             localStorage.setItem('hegemon_bookings_count', count);
             document.getElementById('active-bookings').innerText = count.toLocaleString();
-            addConsoleLine(`NEW BOOKING RECEIVED: ${name} - ${dest} - €${budget}`, 'success');
+            addConsoleLine(`NEW BOOKING: ${name} → ${dest} | €${budget} | ${travelType}`, 'success');
             addConsoleLine(`DISTRIBUTING TO 320 NODES...`, 'info');
             const btn = e.target.querySelector('button');
             const originalText = btn.innerText;
             btn.innerText = "ОБРАБОТКА...";
             btn.style.background = "#333";
             setTimeout(() => {
-                alert("ВАШЕТО БАРАЊЕ Е УСПЕШНО ИСПРАТЕНО!\n\nЌе добиете понуди во рок од 24 часа.\n\nДоговор за Чест: 50/50");
+                alert("✅ БАРАЊЕТО Е УСПЕШНО ИСПРАТЕНО!\n\nЌе добиете понуди во рок од 24 часа.\n\nДоговор за Чест: 50/50");
                 btn.innerText = "ИСПРАТЕНО ✓";
                 btn.style.background = "#00ff88";
                 btn.style.color = "#000";
@@ -277,6 +385,7 @@
             }, 1500);
         }
 
+        // --- 4. CONSOLE SYSTEM ---
         function addConsoleLine(text, type = '') {
             const consoleOutput = document.getElementById('consoleOutput');
             const line = document.createElement('span');
@@ -287,6 +396,65 @@
             consoleOutput.scrollTop = consoleOutput.scrollHeight;
         }
 
+        // --- 5. DYNAMIC PARTNERS LOADER ---
+        async function loadPartners() {
+            const container = document.getElementById('partnersContainer');
+            const countElement = document.getElementById('partners-count');
+            
+            try {
+                // Fetch from GitHub: /partners/partners.json
+                const response = await fetch('partners/partners.json');
+                if(!response.ok) throw new Error('File not found');
+                
+                const data = await response.json();
+                const partners = data.partners || [];
+                
+                // Update counter
+                countElement.innerText = partners.length;
+                
+                // Clear loading message
+                container.innerHTML = '';
+                
+                // Display partners (show max 8 for demo)
+                const displayPartners = partners.slice(0, 8);
+                displayPartners.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'partner-card';
+                    card.innerHTML = `
+                        <div class="name">${p.name}</div>
+                        <div class="category">${p.category}</div>
+                        <div class="country">📍 ${p.country}</div>
+                        <div class="status">● ${p.status.toUpperCase()}</div>
+                    `;
+                    container.appendChild(card);
+                });
+                
+                // Add "more" indicator if > 8 partners
+                if(partners.length > 8) {
+                    const more = document.createElement('div');
+                    more.style.gridColumn = '1 / -1';
+                    more.style.textAlign = 'center';
+                    more.style.color = 'var(--text-gray)';
+                    more.style.padding = '1rem';
+                    more.innerHTML = `+ ${partners.length - 8} дополнителни партнери достапни во системот`;
+                    container.appendChild(more);
+                }
+                
+                addConsoleLine(`PARTNERS LOADED: ${partners.length} nodes connected`, 'success');
+                
+            } catch(error) {
+                console.error('Error loading partners:', error);
+                container.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; color: var(--danger);">
+                        ⚠️ Не може да се вчитаат партнерите.<br>
+                        Провери дали <code>partners/partners.json</code> постои во репозиториумот.
+                    </div>
+                `;
+                addConsoleLine(`PARTNERS LOAD ERROR: ${error.message}`, 'error');
+            }
+        }
+
+        // --- 6. ADMIN PANEL ---
         function toggleAdmin() {
             const panel = document.getElementById('adminPanel');
             if(panel.style.display === 'block') { panel.style.display = 'none'; } 
@@ -297,11 +465,39 @@
             const tbody = document.getElementById('bookingTableBody');
             const bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
             tbody.innerHTML = '';
-            if(bookings.length === 0) { tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">Нема зачувани букирања во овој прелистувач</td></tr>'; return; }
+            if(bookings.length === 0) { tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">Нема зачувани букирања во овој прелистувач</td></tr>'; return; }
             bookings.forEach(b => {
-                const row = `<tr><td>${b.date}</td><td>${b.name}</td><td>${b.destination}</td><td>€ ${b.budget}</td><td style="color:var(--success)">${b.status}</td></tr>`;
+                const row = `<tr>
+                    <td>${b.date}</td>
+                    <td>${b.name}</td>
+                    <td>${b.destination}</td>
+                    <td>€ ${b.budget}</td>
+                    <td>${b.travelers || 1}</td>
+                    <td style="color:var(--success)">${b.status}</td>
+                </tr>`;
                 tbody.innerHTML += row;
             });
+        }
+
+        // --- 7. CSV EXPORT ---
+        function exportToCSV() {
+            const bookings = JSON.parse(localStorage.getItem('hegemon_bookings_list') || '[]');
+            if(bookings.length === 0) { alert('Нема податоци за експорт!'); return; }
+            let csv = 'Дата,Име,Дестинација,Буџет,Патници,Тип,Статус\n';
+            bookings.forEach(b => {
+                csv += `${b.date},${b.name},${b.destination},${b.budget},${b.travelers || 1},${b.travelType || ''},${b.status}\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'hegemon_bookings_' + new Date().toISOString().slice(0,10) + '.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            addConsoleLine('CSV EXPORT: Data downloaded successfully', 'success');
+            alert('📥 Податоците се преземени како CSV фајл!');
         }
 
         function clearBookings() {
@@ -313,7 +509,13 @@
             }
         }
 
-        window.onload = function() { updateStats(); addConsoleLine("SYSTEM READY. WELCOME COMMANDER.", "success"); };
+        // --- INIT ---
+        window.onload = function() { 
+            updateStats(); 
+            loadPartners(); // Load partners from JSON
+            addConsoleLine("SYSTEM READY. GLOBAL SOVEREIGN v8.0 ACTIVE.", "success");
+            addConsoleLine("GOOGLE TRANSLATE: Macedonian default | Simplified travel types | Dynamic partners loader", "info");
+        };
     </script>
 </body>
 </html>
