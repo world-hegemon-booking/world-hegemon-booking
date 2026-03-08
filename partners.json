@@ -1,0 +1,84 @@
+{
+  "partners": [
+    {
+      "id": 1,
+      "name": "Macedonian Artisans",
+      "category": "Локални Занаети",
+      "country": "Македонија",
+      "status": "online",
+      "rating": 4.9
+    },
+    {
+      "id": 2,
+      "name": "Luxury Network EU",
+      "category": "Лукс Хотели",
+      "country": "Франција",
+      "status": "online",
+      "rating": 5.0
+    },
+    {
+      "id": 3,
+      "name": "Global Logistics Pro",
+      "category": "Транспорт",
+      "country": "Германија",
+      "status": "online",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "name": "Gourmet Experiences",
+      "category": "Гурман Ресторани",
+      "country": "Италија",
+      "status": "online",
+      "rating": 4.8
+    },
+    {
+      "id": 5,
+      "name": "Secure Travel Systems",
+      "category": "Сигурност",
+      "country": "Швајцарија",
+      "status": "online",
+      "rating": 5.0
+    },
+    {
+      "id": 6,
+      "name": "Elite Aviation Partners",
+      "category": "Авио Компании",
+      "country": "ОАЕ",
+      "status": "online",
+      "rating": 4.9
+    },
+    {
+      "id": 7,
+      "name": "Cultural Heritage Tours",
+      "category": "Културни Искуства",
+      "country": "Грција",
+      "status": "online",
+      "rating": 4.6
+    },
+    {
+      "id": 8,
+      "name": "Adventure Sovereign",
+      "category": "Авантури",
+      "country": "Норвешка",
+      "status": "online",
+      "rating": 4.8
+    },
+    {
+      "id": 9,
+      "name": "Balkan Soul Travel",
+      "category": "Регионални Тури",
+      "country": "Србија",
+      "status": "online",
+      "rating": 4.5
+    },
+    {
+      "id": 10,
+      "name": "Mediterranean Dreams",
+      "category": "Летувања",
+      "country": "Шпанија",
+      "status": "online",
+      "rating": 4.7
+    }
+  ]
+}
