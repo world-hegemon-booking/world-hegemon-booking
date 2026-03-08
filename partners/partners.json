@@ -1,0 +1,29 @@
+{
+  "partners": [
+    {
+      "id": 1,
+      "name": "Macedonian Artisans",
+      "category": "Локални Занаети",
+      "country": "Македонија",
+      "status": "online",
+      "rating": 4.9
+    },
+    {
+      "id": 2,
+      "name": "Luxury Network EU",
+      "category": "Лукс Хотели",
+      "country": "Франција",
+      "status": "online",
+      "rating": 5.0
+    },
+    {
+      "id": 3,
+      "name": "Global Logistics Pro",
+      "category": "Транспорт",
+      "country": "Германија",
+      "status": "online",
+      "rating": 4.7
+    }
+    // ... додади уште 317 партнери овде
+  ]
+}
